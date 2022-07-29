@@ -1,0 +1,29 @@
+root@graphnode1:/home/visitprithi/subgraph2/subGraph# yarn run deploy-local
+yarn run v1.22.11
+warning ../../package.json: License should be a valid SPDX license expression
+$ graph deploy vincil/blockvincil --debug --ipfs http://127.0.0.1:5001 --node http://127.0.0.1:8020/
+✔ Version Label (e.g. v0.0.1) · 
+  Skip migration: Bump mapping apiVersion from 0.0.1 to 0.0.2
+  Skip migration: Bump mapping apiVersion from 0.0.2 to 0.0.3
+  Skip migration: Bump mapping apiVersion from 0.0.3 to 0.0.4
+  Skip migration: Bump mapping specVersion from 0.0.1 to 0.0.2
+✔ Apply migrations
+✔ Load subgraph from subgraph.yaml
+  Compile data source: Custody => build/Custody/Custody.wasm
+✔ Compile subgraph
+  Copy schema file build/schema.graphql
+  Write subgraph file build/Custody/abis/mytestcontract.json
+  Write subgraph manifest build/subgraph.yaml
+✔ Write compiled subgraph to build/
+  Add file to IPFS build/schema.graphql
+                .. QmXtQxgwJ7RPXfwsgYUhM15qk8r3Q7ZbQdXjCkSfMUSa4N
+  Add file to IPFS build/Custody/abis/mytestcontract.json
+                .. QmYikhNnMk7CherQbD89EKD8NK4pkv4yiCiGFPxDSdinkb
+  Add file to IPFS build/Custody/Custody.wasm
+                .. QmScgo9Ew9ku6bstYYjERdG39LP1odS4dZqWNnn1myZzWi
+✔ Upload subgraph to IPFS
+Build completed: QmUVjxqaYiVUGrGAii6LKYqJpMGZ6sFEztpgLgMmuPqvnX
+Deployed to http://127.0.0.1:8000/subgraphs/name/vincil/blockvincil/graphql
+Subgraph endpoints:
+Queries (HTTP):     http://127.0.0.1:8000/subgraphs/name/vincil/blockvincil
+Subscriptions (WS): http://127.0.0.1:8001/subgraphs/name/vincil/blockvincil

@@ -1,0 +1,19 @@
+{
+  "name": "vincilium-subgraph",
+  "description": "A subgraph for the Graph ",
+  "author": "blockvincil",
+  "version": "0.3.0",
+  "license": "ISC",
+  "scripts": {
+    "codegen": "graph codegen",
+    "create-local": "graph create blockrecondataV1/uat --node http://localhost:8020",
+    "remove-local": "graph remove blockrecondataV1/uat --node http://localhost:8020",
+    "build": "graph build",
+    "deploy-local": "graph deploy blockrecondataV1/uat --debug --ipfs http://localhost:5001 --node http://localhost:8020/",
+    "watch-local": "graph deploy blockrecondataV1/uat --watch --debug --node http://localhost:8020/ --ipfs http://localhost:5001"
+  },
+  "devDependencies": {
+    "@graphprotocol/graph-cli": "^0.30.0",
+    "@graphprotocol/graph-ts": "^0.27.0"
+  }
+}

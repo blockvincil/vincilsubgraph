@@ -1,0 +1,45 @@
+specVersion: 0.0.4
+description: Decentralized assets over the quorum Blockchain.
+repository: https://github.com/blockvincil/vincilsubgraph
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum/contract
+    name: blockrecondata
+    network: mainnet
+    source:
+      address: '0x7a2483db6b997c6e3358b26cb7a7ef37648f353f'
+      abi: blockrecondata
+      startBlock: 259845
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      entities:
+        - source1
+        - source2
+        - source3
+        - reconcile
+        - refData
+        - asst
+        - blocrefHst
+        - blocref
+      abis:
+        - name: blockrecondata
+          file: ./abis/blockrecondata.json
+      eventHandlers:
+        - event: addAsset1(string,string,string,string,string,string,string,uint256)
+          handler: handleNewEventAddAsset1
+        - event: addAsset2(string,string,string,string,string,string,string,uint256)
+          handler: handleNewEventAddAsset2
+        - event: addAsset3(string,string,string,string,string,string,uint256)
+          handler: handleNewEventAddAsset3 
+        - event: addRecon(string,string,string,string,string,string,string,uint256)
+          handler: handleNewEventRecon
+        - event: addRef(string,string,string,string,string,string,string,string,uint256)
+          handler: handleNewEventRef  
+        - event: AssetEvent(string,string,string,uint256)
+          handler: handleNewEventAsst 
+        - event: addblocRef(string,string,string,string,string,string,uint256)
+          handler: handleNewEventBlocRef 
+      file: ./src/mapping.ts

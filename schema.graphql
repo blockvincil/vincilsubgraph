@@ -1,0 +1,78 @@
+type source1 @entity {
+  id: ID!
+  assetID : String
+  account: String
+  isin: String
+  traderef: String
+  counterparty: String
+  metadata: String!
+  s1timestamp: BigInt!
+}
+
+type source2 @entity {
+  id: ID!
+  assetID : String
+  fund: String
+  secid: String
+  ref: String
+  broker: String
+  metadata: String!
+  s2timestamp: BigInt!
+}
+
+type source3 @entity {
+  id: ID!
+  assetID : String
+  acct: String
+  assttype: String
+  ref: String
+  metadata: String!
+  s3timestamp: BigInt!
+}
+
+type reconcile @entity {
+  id: ID!
+  assetid: String
+  reconid: String
+  matchid: String
+  matchstatus: String
+  sourcename: String
+  metadata: String!
+  rtimestamp: BigInt!
+}
+
+type refData @entity {
+  id: ID!
+  refname: String
+  f1Name: String
+  f2Name: String
+  f3Name: String
+  f4Name: String
+  f5Name: String
+  metadata: String!
+  reftimestamp: BigInt!
+}
+
+type asset @entity {
+  id: ID!
+  asstId: String
+  asstmetadata: String
+  assttimestamp: BigInt!
+}
+
+type blocrefHst @entity {
+  id: ID!
+  assetId: String
+  grp: String
+  src: String
+  metadata: String!
+  bloctimestamp: BigInt!
+}
+
+type blocref @entity {
+  id: ID!
+  grp: String
+  src: String
+  metadatags: String
+  bloctimestamp: BigInt!
+}
